@@ -234,7 +234,7 @@ get_stamenmap <- function(
 
   # set image type (stamen only)
   if(maptype %in% c("terrain","terrain-background","watercolor")){
-    filetype <- "jpg"
+    filetype <- "png"
   } else {
     filetype <- "png"
   }
@@ -425,7 +425,7 @@ get_stamenmap_tile <- function(maptype, zoom, x, y, force = FALSE, messaging = T
 
   # format url http://tile.stamen.com/[maptype]/[zoom]/[x]/[y].jpg
   if(maptype %in% c("terrain","terrain-background","watercolor")){
-    filetype <- "jpg"
+    filetype <- "png"
   } else {
     filetype <- "png"
   }
@@ -442,7 +442,7 @@ get_stamenmap_tile <- function(maptype, zoom, x, y, force = FALSE, messaging = T
 
   # read in
   if(maptype %in% c("terrain","terrain-background","watercolor")){
-    tile <- readJPEG(tmp)
+    tile <- readPNG(tmp)
   } else {
     tile <- readPNG(tmp)
   }
